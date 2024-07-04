@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paneli i Administratorit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #d21e1e;
+        }
+        form, .button-container {
+            display: inline-block;
+            margin: 10px;
+        }
+        button {
+            padding: 15px 30px;
+            border: none;
+            background-color: #d21e1e;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .link-button {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 30px;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            width: 300px;
+        }
+        .section {
+            margin-top: 30px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #d21e1e;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Paneli i Administratorit</h1>
+    
+    <div class="section">
+        <div class="section-title">Gjenero Raporte</div>
+        <form method="POST" action="/generate_sold_items">
+            <button type="submit">Gjenero Artikujt e Shitur</button>
+        </form>
+        <form method="POST" action="/generate_remaining_items">
+            <button type="submit">Gjenero Artikujt e Mbetur</button>
+        </form>
+        <form method="POST" action="/generate_daily_total">
+            <button type="submit">Gjenero Totalin Ditor</button>
+        </form>
+        <form method="POST" action="/generate_monthly_total">
+            <button type="submit">Gjenero Totalin Mujor</button>
+        </form>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Menaxhimi i Inventarit</div>
+        <a href="/add_inventory_item" class="link-button">Shto Artikull në Inventar</a>
+        <a href="/view_inventory" class="link-button">Shikoni Inventarin</a>
+        <a href="/remove_inventory_item" class="link-button">Hiq Artikull nga Inventari</a>
+        <a href="/decrease_inventory_quantity" class="link-button">Zbrit Sasinë nga Inventari</a>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Produkte të Reja</div>
+        <a href="/add_item" class="link-button">Shto Artikull të Ri</a>
+    </div>
+
+    <div class="section">
+        <a href="/" class="link-button">Kthehu në Faqen Kryesore</a>
+    </div>
+</body>
+</html>
