@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shikoni Inventarin per sot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #d21e1e;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #d21e1e;
+            color: white;
+        }
+        a {
+            display: block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #d21e1e;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shikoni inventarin per sot</h1>
+    <table>
+        <tr>
+            <th>Emri i Artikullit</th>
+            <th>Sasia e Shtuar ne KG</th>
+            <th>Çmimi për Njësi</th>
+            <th>Çmimi total</th>
+        </tr>
+        {% for item in daily_inventory %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }} KG</td>
+            <td>{{ item.price_per_unit }} ALL</td>
+            <td>{{ item.total_price }} ALL</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Total Ditor në Vlerë</h2>
+    <p>{{ daily_total }} ALL</p>
+    <a href="/admin">Kthehu në Panelin e Administratorit</a>
+</body>
+</html>

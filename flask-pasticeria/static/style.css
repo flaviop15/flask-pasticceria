@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #d21e1e;
+}
+
+form {
+    background-color: #fff;
+    padding: 40px;  /* Increase padding for larger form size */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 80%;  /* Increase width for larger form size */
+    max-width: 600px;  /* Limit max width for better readability */
+}
+
+label {
+    display: block;
+    margin-top: 20px;  /* Increase margin for larger spacing */
+    font-size: 18px;  /* Increase label font size */
+}
+
+input, select {
+    width: 100%;  /* Full width input fields */
+    padding: 15px;  /* Increase padding for larger input fields */
+    margin-top: 10px;  /* Add margin to separate input fields */
+    font-size: 18px;  /* Increase input field font size */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;  /* Ensure padding is included in total width */
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    background-color: #d21e1e;
+    color: #fff;
+    font-size: 18px;  /* Increase button font size */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #d21e1e;
+    font-size: 18px;  /* Increase link font size */
+}
