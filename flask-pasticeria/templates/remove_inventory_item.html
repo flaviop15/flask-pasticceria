@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiq Artikullin nga Inventari</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #d21e1e;
+        }
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 80%;
+            max-width: 600px;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        select {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            background-color: #d21e1e;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a {
+            display: block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #d21e1e;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hiq Artikullin nga Inventari</h1>
+    <form method="POST" action="/remove_inventory_item">
+        {{ form.hidden_tag() }}
+        <label for="item">Zgjidh Artikullin për të Hequr</label>
+        {{ form.item }}
+        <button type="submit">{{ form.submit.label }}</button>
+    </form>
+    <a href="/admin">Kthehu në Panelin e Administratorit</a>
+</body>
+</html>

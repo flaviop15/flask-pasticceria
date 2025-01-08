@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pastiçeri Milan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0909;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #da0a0a;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            background-color: #da0a0a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #ffffff;
+            color: #da0a0a;
+        }
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px; /* Adjust height as needed */
+        }
+        .center-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mirësevini në Pastiçeri Milan</h1>
+    <div class="center-image">
+        <img src="{{ url_for('static', filename='images/milan.jpeg') }}" alt="Image description">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/sell">Artikujt e shitur</a></li>
+            <li><a href="/produce">Artikujt e prodhuar</a></li>
+            <li><a href="/admin">Paneli i pronarit</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

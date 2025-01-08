@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Contents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Database Contents</h1>
+
+    <h2>Items</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Artikulli</th>
+            <th>Cmimi</th>
+            <th>Sasia</th>
+            <th>Totali</th>
+            <th>Data</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.total_revenue }}</td>
+            <td>{{ item.last_production_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Daily Totals</h2>
+    <table border="1">
+        <tr>
+            <th>Data</th>
+            <th>Totali ditor</th>
+        </tr>
+        {% for total in daily_totals %}
+        <tr>
+            <td>{{ total.date }}</td>
+            <td>{{ total.total_revenue }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin">Kthehu</a>
+</body>
+</html>
